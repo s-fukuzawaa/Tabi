@@ -1,0 +1,64 @@
+﻿@page
+@model Tabi.CreateModel1
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Survey</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Survey.age" class="control-label"></label>
+                <input asp-for="Survey.age" class="form-control" />
+                <span asp-validation-for="Survey.age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Survey.size" class="control-label"></label>
+                <input asp-for="Survey.size" class="form-control" />
+                <span asp-validation-for="Survey.size" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Survey.budget" class="control-label"></label>
+                <input asp-for="Survey.budget" class="form-control" />
+                <span asp-validation-for="Survey.budget" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Survey.planeTicket" /> @Html.DisplayNameFor(model => model.Survey.planeTicket)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Survey.duration" class="control-label"></label>
+                <input asp-for="Survey.duration" class="form-control" />
+                <span asp-validation-for="Survey.duration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Survey.region" class="control-label"></label>
+                <input asp-for="Survey.region" class="form-control" />
+                <span asp-validation-for="Survey.region" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Survey.type" class="control-label"></label>
+                <input asp-for="Survey.type" class="form-control" />
+                <span asp-validation-for="Survey.type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

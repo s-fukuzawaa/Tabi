@@ -1,0 +1,51 @@
+﻿@page
+@model Tabi.Pages.Portfolio.IntroModel
+@{
+    ViewData["Title"] = "Intro";
+}
+<head>
+    <style>
+        ul#u {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #669900;
+            color: floralwhite
+        }
+
+        li#l {
+            float: left;
+            color: floralwhite
+        }
+
+            li#l a#h {
+                display: block;
+                color: floralwhite;
+                padding: 14px 16px;
+                text-align: center;
+                text-decoration: none;
+            }
+
+                li#l a#h:hover#h {
+                    background-color: #558000;
+                }
+    </style>
+</head>
+<ul id="u">
+    <li id="l"><a id="h" class="active" href="https://localhost:44319/surveys/portfolio/intro?id=@Html.ViewData.Model.ViewModel.query">Debrief</a></li>
+    <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/food?id=@Html.ViewData.Model.ViewModel.query">Food</a></li>
+    <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/hotels?id=@Html.ViewData.Model.ViewModel.query">Hotels</a></li>
+    <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/sightseeing?id=@Html.ViewData.Model.ViewModel.query">Sightseeing</a></li>
+    <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/save?id=@Html.ViewData.Model.ViewModel.query">Save</a></li>
+
+</ul>
+<div>
+    <br><br>
+
+    <h1>@Html.ViewData.Model.ViewModel.city</h1>
+    <br><br>
+    <iframe width="600" height="450" frameborder="0" style="border:0"
+            src="@Html.ViewData.Model.ViewModel.map"></iframe>
+</div>
+

@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using Tabi.Data;
+using Tabi.Models;
+
+namespace Tabi
+{
+    public class IndexModel1 : PageModel
+    {
+        private readonly Tabi.Data.TabiContext _context;
+
+        public IndexModel1(Tabi.Data.TabiContext context)
+        {
+            _context = context;
+        }
+
+        public IList<Survey> Survey { get;set; }
+
+        public async Task OnGetAsync()
+        {
+            Survey = await _context.Survey.ToListAsync();
+        }
+    }
+}

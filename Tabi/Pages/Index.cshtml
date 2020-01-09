@@ -1,0 +1,40 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<style>
+    #grad {
+        background-image: linear-gradient(to bottom right, rgb(102, 255, 255),rgb(51, 204, 255),rgb(0, 204, 255),rgb(102, 255, 255))
+    }
+
+    #button:link, #button:visited {
+        background-color: #4ddbff;
+        color: white;
+        border-radius: 18px;
+        padding: 25px 40px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    #button:hover, #button:active {
+        background-color: #1ac6ff;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+</style>
+<body id="grad">
+    <div class="text-center">
+        <br>
+        <br>
+        <br><br><br>
+        <h2 style="color:floralwhite">Welcome to Tabi,</h2>
+        <h3 style="color:floralwhite">your personal travel planner</h3>
+        <br><br><br>
+        <div style="display:inline-block">
+        <h5 style="color:white; text-align:center"> <a id="button" href="https://localhost:44319/surveys">Explore</a></h5>
+            <br>
+        <h5 style="color:white; text-align:center" > <a id="button" href="https://localhost:44319/entries">Saved</a></h5>
+        </div>
+    </div>
+</body>

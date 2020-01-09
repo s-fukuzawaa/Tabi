@@ -1,0 +1,83 @@
+﻿@page
+@model Tabi.IndexModel
+
+@{
+    ViewData["Title"] = "Entries";
+}
+
+<h1>Entries</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form asp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by City!
+            <input type="text" name="SearchString" value="@Model.CurrentFilter"/>
+            <input type="submit" value="Search" class="btn btn-primary"/>
+            <a asp-page="./Index">Back to full list </a>
+        </p>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.CitySort">
+                @Html.DisplayNameFor(model => model.Entry[0].city)
+                </a>
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.typesort">
+
+                    @Html.DisplayNameFor(model => model.Entry[0].placetype)
+
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entry[0].address)
+                
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entry[0].imgUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entry[0].map)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Entry) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.placetype)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                <img id="image" style="max-height:160px" src="@Html.DisplayFor(modelItem => item.imgUrl)">
+            </td>
+            <td>
+                
+                <iframe id="change"
+                        height="160"
+                        width="240"
+                        frameborder="1" style="margin-left:15px; overflow-wrap:normal; float:right"
+                        src="@Html.DisplayFor(modelItem => item.map)" allowfullscreen>
+                </iframe>
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

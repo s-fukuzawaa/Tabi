@@ -1,0 +1,74 @@
+﻿@page
+@model Tabi.IndexModel1
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Survey[0].age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Survey[0].size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Survey[0].budget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Survey[0].planeTicket)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Survey[0].duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Survey[0].region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Survey[0].type)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Survey) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.size)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.budget)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.planeTicket)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.region)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a> |
+                <a asp-page="./Map" asp-route-id="@item.ID">Map</a>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

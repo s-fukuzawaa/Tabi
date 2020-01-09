@@ -1,0 +1,61 @@
+﻿@page
+@model Tabi.DetailsModel1
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Survey</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Survey.age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Survey.age)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Survey.size)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Survey.size)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Survey.budget)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Survey.budget)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Survey.planeTicket)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Survey.planeTicket)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Survey.duration)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Survey.duration)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Survey.region)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Survey.region)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Survey.type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Survey.type)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Survey.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
