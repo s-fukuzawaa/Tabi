@@ -59,7 +59,7 @@ namespace Tabi.Models
             public List<Photo> photos { get; set; }
             public string place_id { get; set; }
             public PlusCode plus_code { get; set; }
-            public double? price_level { get; set; }
+            public double price_level { get; set; }
             public double? rating { get; set; }
             public string reference { get; set; }
             public List<string> types { get; set; }

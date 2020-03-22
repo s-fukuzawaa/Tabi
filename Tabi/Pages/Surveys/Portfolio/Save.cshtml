@@ -5,8 +5,11 @@
 }
 
 <style>
+    body{
+        background-color: darkturquoise;
+    }
     .button {
-        background-color: #AED6F1;
+        background-color: darkturquoise;
         color: white;
         border-radius: 12px;
         padding: 30px 40px;
@@ -22,7 +25,7 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: #669900;
+            background-color: darkturquoise;
             color: floralwhite
         }
 
@@ -40,31 +43,34 @@
             }
 
                 li#l a#h:hover#h {
-                    background-color: #558000;
+                    background-color: cornflowerblue;
                 }
     </style>
 </head>
 <ul id="u">
     <li id="l"><a id="h" class="active" href="https://localhost:44319/surveys/portfolio/intro?id=@Html.ViewData.Model.query">Debrief</a></li>
-    <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/food?id=@Html.ViewData.Model.query">1. Food</a></li>
-    <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/hotels?id=@Html.ViewData.Model.query">2. Hotels</a></li>
-    <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/sightseeing?id=@Html.ViewData.Model.query">3. Sightseeing</a></li>
-    <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/save?id=@Html.ViewData.Model.query">4. Save</a></li>
+    <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/food?id=@Html.ViewData.Model.query">Food</a></li>
+    <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/hotels?id=@Html.ViewData.Model.query">Hotels</a></li>
+    <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/sightseeing?id=@Html.ViewData.Model.query">Sightseeing</a></li>
+    <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/save?id=@Html.ViewData.Model.query">Save</a></li>
 
 </ul>
 
 
 
 
-
+<br>
 <h1>Save</h1>
-@for (int i = Html.ViewData.Model.start; i < Html.ViewData.Model.show.Count(); i++)
+<h2>You have saved those places in this city in the past.</h2>
+<br>
+@for (int i = 0; i < Html.ViewData.Model.show.Count(); i++)
 {
-    <div style="background-color: mediumslateblue; color:white; padding: 20px">
+    <div style="background-color: cornflowerblue; color:white; padding: 20px">
         <h4>@Html.ViewData.Model.show[i].address</h4>
+        
         <h5>@Html.ViewData.Model.show[i].placetype</h5>
         <h5>City: @Html.ViewData.Model.show[i].city</h5>
-        <div style="align-items:center; display:flex">
+        <div style="align-items:center; display:flex"> 
             <img id="image" style="max-height:400px; " src="@Html.ViewData.Model.show[i].imgUrl">
             <iframe id="change"
                     height="400"

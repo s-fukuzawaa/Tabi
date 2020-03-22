@@ -4,19 +4,22 @@
 @{
     ViewData["Title"] = "Entries";
 }
+<style>
+    a,th,tr{color: floralwhite;
 
-<h1>Entries</h1>
+    }
+</style>
+<body style="background-color: skyblue">
+<h1>Saved Entries</h1>
+    <br>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
 <form asp-page="./Index" method="get">
     <div class="form-actions no-color">
         <p>
-            Find by City!
+            Find by City!  
             <input type="text" name="SearchString" value="@Model.CurrentFilter"/>
             <input type="submit" value="Search" class="btn btn-primary"/>
-            <a asp-page="./Index">Back to full list </a>
+            <a asp-page="./Index">  Back to full list </a>
         </p>
     </div>
 </form>
@@ -81,3 +84,4 @@
 }
     </tbody>
 </table>
+</body>

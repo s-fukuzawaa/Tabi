@@ -7,7 +7,7 @@
 
 <style>
     #grad {
-        background-color: #AF7AC5
+        background-color:rgb(135,206,215)
     }
 
     .myClass {
@@ -29,7 +29,6 @@
 
     a {
         color: floralwhite;
-        text-decoration: underline;
     }
 
     li {
@@ -56,6 +55,14 @@
         }
 
         <h5>Popular Cities in @Html.ViewData.Model.ViewModel.input</h5>
+        <!--<form method="post">
+            <div class="form-group form-check" style="visibility:hidden">
+                <input class="form-check-input" asp-for="list" value="@Html.ViewData.Model.ViewModel.populars">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="List by price" a class="btn btn-primary">
+            </div>
+        </form>-->
         <ul>
             @for (int i = 0; i < Html.ViewData.Model.ViewModel.populars.Count; i++)
             {

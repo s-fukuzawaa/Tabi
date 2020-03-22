@@ -5,8 +5,12 @@
 }
 
 <style>
+    body {
+        background-color: darkturquoise;
+    }
+
     .button {
-        background-color: #AED6F1;
+        background-color: darkturquoise;
         color: white;
         border-radius: 12px;
         padding: 30px 40px;
@@ -22,7 +26,7 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: #669900;
+            background-color: darkturquoise;
             color: floralwhite
         }
 
@@ -40,7 +44,7 @@
             }
 
                 li#l a#h:hover#h {
-                    background-color: #558000;
+                    background-color: cornflowerblue;
                 }
     </style>
 
@@ -59,16 +63,18 @@
 <br>
 <br>
 <h1>Hotels in @Html.ViewData.Model.ViewModel.city</h1>
+<br>
+<br>
 <div>
 
 
     @for (int i = 0; i < Html.ViewData.Model.ViewModel.placeName.Count; i++)
     {
-        <div style="background-color: darkorange; color:floralwhite;padding:20px;">
+        <div style="background-color: turquoise; color:floralwhite;padding:20px;">
             <h2>@Html.ViewData.Model.ViewModel.placeName[i]</h2>
             <h4>Rating: @Html.ViewData.Model.ViewModel.rating[i]</h4>
             <form method="post">
-                
+
                 <div class="form-group form-check" style="visibility:hidden">
                     <input class="form-check-input" asp-for="foodEntry.imgUrl" value="@Html.ViewData.Model.ViewModel.imgUrl[i]" />
                 </div>

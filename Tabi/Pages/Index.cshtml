@@ -3,9 +3,13 @@
 @{
     ViewData["Title"] = "Home page";
 }
+
 <style>
     #grad {
-        background-image: linear-gradient(to bottom right, rgb(102, 255, 255),rgb(51, 204, 255),rgb(0, 204, 255),rgb(102, 255, 255))
+        background-image: url("Imgs/background.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
     }
 
     #button:link, #button:visited {
@@ -26,15 +30,18 @@
 <body id="grad">
     <div class="text-center">
         <br>
+        <br><br>
+        <br><br>
         <br>
-        <br><br><br>
         <h2 style="color:floralwhite">Welcome to Tabi,</h2>
         <h3 style="color:floralwhite">your personal travel planner</h3>
-        <br><br><br>
+        <br><br><br><br><br>
         <div style="display:inline-block">
-        <h5 style="color:white; text-align:center"> <a id="button" href="https://localhost:44319/surveys">Explore</a></h5>
-            <br>
-        <h5 style="color:white; text-align:center" > <a id="button" href="https://localhost:44319/entries">Saved</a></h5>
+            <div style="display:flex">
+                <h5 style="color:white; text-align :center"> <a style="color:white; margin-right:20px" href="https://localhost:44319/surveys/navigate">Explore</a></h5>
+                <h5 style="color:white; text-align:center"> <a style="color:white; margin-left:20px" href="https://localhost:44319/entries">Saved</a></h5>
+
+            </div>
         </div>
     </div>
 </body>

@@ -11,7 +11,7 @@ namespace Tabi.Pages
     public class PrivacyModel : PageModel
     {
         private readonly ILogger<PrivacyModel> _logger;
-
+        public string s { get; set; }
         public PrivacyModel(ILogger<PrivacyModel> logger)
         {
             _logger = logger;
@@ -19,6 +19,9 @@ namespace Tabi.Pages
 
         public void OnGet()
         {
+            
+            
         }
+        
     }
 }

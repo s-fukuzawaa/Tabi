@@ -6,6 +6,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using Tabi.Models;
 
+/*linear-gradient(to bottom right, rgb(102, 255, 255),rgb(51, 204, 255),rgb(0, 204, 255),rgb(102, 255, 255))*/
 
 
 namespace Tabi

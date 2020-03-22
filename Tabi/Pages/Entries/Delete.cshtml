@@ -4,49 +4,67 @@
 @{
     ViewData["Title"] = "Delete";
 }
+<style>
+    dd, dt, dl {
+        color: floralwhite;
+    }
 
-<h1>Delete</h1>
+    a {
+        color: floralwhite;
+    }
+</style>
+<body style="background-color: palevioletred">
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Entry</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Entry.city)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Entry.city)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Entry.placetype)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Entry.placetype)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Entry.address)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Entry.address)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Entry.imgUrl)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Entry.imgUrl)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Entry.map)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Entry.map)
-        </dd>
-    </dl>
-    
-    <form method="post">
-        <input type="hidden" asp-for="Entry.ID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
-    </form>
-</div>
+    <h1>Delete</h1>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Entry</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Entry.city)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Entry.city)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Entry.placetype)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Entry.placetype)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Entry.address)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Entry.address)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Entry.imgUrl)
+            </dt>
+
+            <dd class="col-sm-10">
+                <img id="image" style="max-height:160px" src="@Html.DisplayFor(model=>model.Entry.imgUrl)">
+
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Entry.map)
+            </dt>
+            <dd class="col-sm-10">
+                <iframe id="change"
+                        height="160"
+                        width="240"
+                        frameborder="1" style="margin-left:15px; overflow-wrap:normal; "
+                        src="@Html.DisplayFor(model => model.Entry.map)" allowfullscreen>
+                </iframe>
+            </dd>
+        </dl>
+
+        <form method="post">
+            <input type="hidden" asp-for="Entry.ID" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-page="./Index">Back to List</a>
+        </form>
+    </div>
+</body>

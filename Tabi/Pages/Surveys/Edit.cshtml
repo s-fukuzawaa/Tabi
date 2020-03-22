@@ -4,6 +4,12 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<style>
+    label,input,form,a{
+        color:floralwhite
+    }
+</style>
+<body style="background-color: lightsteelblue">
 
 <h1>Edit</h1>
 
@@ -59,7 +65,7 @@
 <div>
     <a asp-page="./Index">Back to List</a>
 </div>
-
+    </body>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

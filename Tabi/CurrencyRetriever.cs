@@ -14,8 +14,10 @@ namespace Tabi
             HttpClient httpClient = new HttpClient();
             string apiUrl = "https://api.exchangeratesapi.io/latest?base=USD";
             string response = await httpClient.GetStringAsync(apiUrl);
+            string h = response+"";
             CurrencyRootObject currencies = JsonConvert.DeserializeObject<CurrencyRootObject>(response);
             return currencies;
         }
+        
     }
 }

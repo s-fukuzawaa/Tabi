@@ -1,0 +1,95 @@
+Country,CountryCode,Currency,Code
+New Zealand,NZ,New Zealand Dollars,NZD
+Cook Islands,CK,New Zealand Dollars,NZD
+Niue,NU,New Zealand Dollars,NZD
+Pitcairn,PN,New Zealand Dollars,NZD
+Tokelau,TK,New Zealand Dollars,NZD
+Australian,AU,Australian Dollars,AUD
+Christmas Island,CX,Australian Dollars,AUD
+Cocos (Keeling) Islands,CC,Australian Dollars,AUD
+Heard and Mc Donald Islands,HM,Australian Dollars,AUD
+Kiribati,KI,Australian Dollars,AUD
+Nauru,NR,Australian Dollars,AUD
+Norfolk Island,NF,Australian Dollars,AUD
+Tuvalu,TV,Australian Dollars,AUD
+American Samoa,AS,Euros,EUR
+Andorra,AD,Euros,EUR
+Austria,AT,Euros,EUR
+Belgium,BE,Euros,EUR
+Finland,FI,Euros,EUR
+France,FR,Euros,EUR
+French Guiana,GF,Euros,EUR
+French Southern Territories,TF,Euros,EUR
+Germany,DE,Euros,EUR
+Greece,GR,Euros,EUR
+Guadeloupe,GP,Euros,EUR
+Ireland,IE,Euros,EUR
+Italy,IT,Euros,EUR
+Luxembourg,LU,Euros,EUR
+Martinique,MQ,Euros,EUR
+Mayotte,YT,Euros,EUR
+Monaco,MC,Euros,EUR
+Netherlands,NL,Euros,EUR
+Portugal,PT,Euros,EUR
+Reunion,RE,Euros,EUR
+Samoa,WS,Euros,EUR
+San Marino,SM,Euros,EUR
+Slovenia,SI,Euros,EUR
+Spain,ES,Euros,EUR
+Vatican City State (Holy See),VA,Euros,EUR
+South Georgia and the South Sandwich Islands,GS,Sterling,GBP
+United Kingdom,GB,Sterling,GBP
+Jersey,JE,Sterling,GBP
+British Indian Ocean Territory,IO,USD,USD
+Guam,GU,USD,USD
+Marshall Islands,MH,USD,USD
+Micronesia Federated States of,FM,USD,USD
+Northern Mariana Islands,MP,USD,USD
+Palau,PW,USD,USD
+Puerto Rico,PR,USD,USD
+Turks and Caicos Islands,TC,USD,USD
+United States,US,USD,USD
+United States Minor Outlying Islands,UM,USD,USD
+Virgin Islands (British),VG,USD,USD
+Virgin Islands (US),VI,USD,USD
+Hong Kong,HK,HKD,HKD
+Canada,CA,Canadian Dollar,CAD
+Japan,JP,Japanese Yen,JPY
+Bhutan,BT,Indian Rupee,INR
+India,IN,Indian Rupee,INR
+Bouvet Island,BV,Norwegian Krone,NOK
+Norway,NO,Norwegian Krone,NOK
+Svalbard and Jan Mayen Islands,SJ,Norwegian Krone,NOK
+Brazil,BR,Brazil,BRL
+Bulgaria,BG,Lev,BGN
+China,CN,Yuan Renminbi,CNY
+Croatia (Hrvatska),HR,Croatian Dinar,HRK
+Czech Republic,CZ,Koruna,CZK
+Denmark,DK,Danish Krone,DKK
+Faroe Islands,FO,Danish Krone,DKK
+Greenland,GL,Danish Krone,DKK
+East Timor,TP,Indonesian Rupiah,IDR
+Indonesia,ID,Indonesian Rupiah,IDR
+Hungary,HU,Forint,HUF
+Iceland,IS,Icelandic Krona,ISK
+Israel,IL,Shekel,ILS
+Korea South,KR,Won,KRW
+Liechtenstein,LI,Swiss Franc,CHF
+Switzerland,CH,Swiss Franc,CHF
+Malaysia,MY,Ringgit,MYR
+Mexico,MX,Peso,MXN
+Philippines,PH,Peso,PHP
+Poland,PL,Zloty,PLN
+Romania,RO,Leu,RON
+Russian Federation,RU,Ruble,RUB
+Singapore,SG,Dollar,SGD
+South Africa,ZA,Rand,ZAR
+Sweden,SE,Krona,SEK
+Thailand,TH,Baht,THB
+Turkey,TR,Lira,TRY
+Aland Islands,AX,Euro,EUR
+Isle of Man,IM,Manx pound,GBP
+Montenegro,ME,Euro,EUR
+Saint Barthelemy,BL,Euro,EUR
+Saint Pierre and Miquelon,PM,Euro,EUR
+US Armed Forces,USAF,US Dollar,USD

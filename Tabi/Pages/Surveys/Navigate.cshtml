@@ -1,0 +1,43 @@
+﻿@page
+@model Tabi.NavigateModel
+@{
+    ViewData["Title"] = "Navigate";
+}
+<style>
+    body {
+        background-color: skyblue;
+    }
+
+    a#go:link, a#go:visited {
+        background-color: #AED6F1;
+        color: white;
+        border-radius: 12px;
+        padding: 30px 40px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    a#go:hover, a#go:active {
+        background-color: #5DADE2;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+
+    
+</style>
+<h5 style="color:white; text-align :center"> <a id="go"style="color:white; margin-right:20px" href="https://localhost:44319/surveys">Skip Tutorial</a></h5>
+<br><br>
+
+    <body>
+        @for (int i = 0; i < 5; i++)
+        {
+            <img src="~/Imgs/@Model.slides[i]" width="850" height="450" />
+            <br><br>
+        }
+
+        <br><br><br>
+        <h5 style="color:white; text-align :center"> <a id="go" style="color:white; margin-right:20px" href="https://localhost:44319/surveys">You are ready to Explore!</a></h5>
+   
+        
+    </body>
+

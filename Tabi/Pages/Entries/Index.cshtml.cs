@@ -48,7 +48,7 @@ namespace Tabi
                     entryIQ = entryIQ.OrderByDescending(s => s.placetype);
                     break;
                 default:
-                    entryIQ = entryIQ.OrderBy(s => s.placetype);
+                    entryIQ = entryIQ.OrderBy(s => s.city);
                     break;
             }
 

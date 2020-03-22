@@ -4,12 +4,33 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style>
+    body{
+        background-color:deepskyblue;
+    }
+    a#go:link, a#go:visited {
+        background-color: lightskyblue;
+        color: white;
+        border-radius: 12px;
+        padding: 15px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
 
-<h1>Index</h1>
-
+    a#go:hover, a#go:active {
+        background-color: #5DADE2;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+</style>
+<h1>Your Explored Entries</h1>
+<br>
+<br>
+<body>
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" style="color:white">Create New Entry</a>
 </p>
+    <br>
 <table class="table">
     <thead>
         <tr>
@@ -62,13 +83,14 @@
                 @Html.DisplayFor(modelItem => item.type)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a> |
-                <a asp-page="./Map" asp-route-id="@item.ID">Map</a>
+                <a asp-page="./Edit" asp-route-id="@item.ID" style="color:white">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID" style="color:white">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID" style="color:white">Delete</a>  -->>>
+                <a id="go" asp-page="./Map" asp-route-id="@item.ID" style="color:white">Map</a>
 
             </td>
         </tr>
 }
     </tbody>
 </table>
+</body>

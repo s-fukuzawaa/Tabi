@@ -5,8 +5,12 @@
 }
 
 <style>
+    body {
+        background-color: darkturquoise;
+    }
+
     .button {
-        background-color: #AED6F1;
+        background-color: darkturquoise;
         color: white;
         border-radius: 12px;
         padding: 30px 40px;
@@ -22,7 +26,7 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: #669900;
+            background-color: darkturquoise;
             color: floralwhite
         }
 
@@ -40,15 +44,15 @@
             }
 
                 li#l a#h:hover#h {
-                    background-color: #558000;
+                    background-color: cornflowerblue;
                 }
     </style>
 </head>
 <ul id="u">
     <li id="l"><a id="h" class="active" href="https://localhost:44319/surveys/portfolio/intro?id=@Html.ViewData.Model.ViewModel.query">Debrief</a></li>
-    <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/food?id=@Html.ViewData.Model.ViewModel.query">1. Food</a></li>
-    <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/hotels?id=@Html.ViewData.Model.ViewModel.query">2. Hotels</a></li>
-    <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/sightseeing?id=@Html.ViewData.Model.ViewModel.query">3. Sightseeing</a></li>
+    <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/food?id=@Html.ViewData.Model.ViewModel.query">Food</a></li>
+    <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/hotels?id=@Html.ViewData.Model.ViewModel.query">Hotels</a></li>
+    <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/sightseeing?id=@Html.ViewData.Model.ViewModel.query">Sightseeing</a></li>
     <li id="l"><a id="h" href="https://localhost:44319/surveys/portfolio/save?id=@Html.ViewData.Model.ViewModel.query">Save</a></li>
 
 </ul>
@@ -61,57 +65,59 @@
 
 
 <h5>Popular food places in @Html.ViewData.Model.ViewModel.city</h5>
+<br>
+<br>
 
 @for (int i = 0; i < Html.ViewData.Model.ViewModel.placeName.Count; i++)
 {
-<div style="background-color: darkorange; color:floralwhite;padding:20px;">
-    <h2>@Html.ViewData.Model.ViewModel.placeName[i]</h2>
-    <h4>Rating: @Html.ViewData.Model.ViewModel.rating[i]</h4>
-    <form method="post">
+    <div style="background-color: turquoise; color:floralwhite;padding:20px;">
+        <h2>@Html.ViewData.Model.ViewModel.placeName[i]</h2>
+        <h4>Rating: @Html.ViewData.Model.ViewModel.rating[i]</h4>
+        <form method="post">
 
-        <div class="form-group form-check" style="visibility:hidden">
-            <input class="form-check-input" asp-for="foodEntry.imgUrl" value="@Html.ViewData.Model.ViewModel.imgUrl[i]" />
-        </div>
-        <div class="form-group form-check" style="visibility:hidden">
-            <input class="form-check-input" asp-for="foodEntry.map" value="https://www.google.com/maps/embed/v1/directions?key=AIzaSyD9pmMuEb9ym41g6x_iyQV7f3hcZAOZlek&origin=place_id:@Html.ViewData.Model.ViewModel.origin[i]&destination=place_id:@Html.ViewData.Model.ViewModel.destin[i]&avoid=tolls|highways" />
-        </div>
-        <div class="form-group form-check" style="visibility:hidden">
-            <input class="form-check-input" asp-for="foodEntry.placetype" value="food" />
-        </div>
-        <div class="form-group form-check" style="visibility:hidden">
-            <input class="form-check-input" asp-for="foodEntry.address" value="@Html.ViewData.Model.ViewModel.placeName[i]" />
-        </div>
-        <div class="form-group form-check" style="visibility:hidden">
-            <input class="form-check-input" asp-for="foodEntry.city" value="@Html.ViewData.Model.ViewModel.city" />
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Save" class="btn btn-primary">
-        </div>
-    </form>
-    @if (Html.ViewData.Model.ViewModel.price[i].Length != 0)
-    {
-        <h4>Price level: @Html.ViewData.Model.ViewModel.price[i]</h4>
-
-    }
-
-    <div style="align-items:center; display:flex">
-        @if (!(Html.ViewData.Model.ViewModel.imgUrl[i].Equals("0")))
+            <div class="form-group form-check" style="visibility:hidden">
+                <input class="form-check-input" asp-for="foodEntry.imgUrl" value="@Html.ViewData.Model.ViewModel.imgUrl[i]" />
+            </div>
+            <div class="form-group form-check" style="visibility:hidden">
+                <input class="form-check-input" asp-for="foodEntry.map" value="https://www.google.com/maps/embed/v1/directions?key=AIzaSyD9pmMuEb9ym41g6x_iyQV7f3hcZAOZlek&origin=place_id:@Html.ViewData.Model.ViewModel.origin[i]&destination=place_id:@Html.ViewData.Model.ViewModel.destin[i]&avoid=tolls|highways" />
+            </div>
+            <div class="form-group form-check" style="visibility:hidden">
+                <input class="form-check-input" asp-for="foodEntry.placetype" value="food" />
+            </div>
+            <div class="form-group form-check" style="visibility:hidden">
+                <input class="form-check-input" asp-for="foodEntry.address" value="@Html.ViewData.Model.ViewModel.placeName[i]" />
+            </div>
+            <div class="form-group form-check" style="visibility:hidden">
+                <input class="form-check-input" asp-for="foodEntry.city" value="@Html.ViewData.Model.ViewModel.city" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" a class="btn btn-primary">
+            </div>
+        </form>
+        @if (Html.ViewData.Model.ViewModel.price[i].Length != 0)
         {
-            <img src="@Html.ViewData.Model.ViewModel.imgUrl[i]">
+            <h4>Price level: @Html.ViewData.Model.ViewModel.price[i]</h4>
 
         }
 
+        <div style="align-items:center; display:flex">
+            @if (!(Html.ViewData.Model.ViewModel.imgUrl[i].Equals("0")))
+            {
+                <img src="@Html.ViewData.Model.ViewModel.imgUrl[i]">
 
-        <iframe id="change"
-                height="400"
-                width="600"
-                frameborder="1" style="margin-left:15px; overflow-wrap:normal; float:right"
-                src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyD9pmMuEb9ym41g6x_iyQV7f3hcZAOZlek&origin=place_id:@Html.ViewData.Model.ViewModel.origin[i]&destination=place_id:@Html.ViewData.Model.ViewModel.destin[i]&avoid=tolls|highways" allowfullscreen>
-        </iframe>
+            }
 
 
+            <iframe id="change"
+                    height="400"
+                    width="600"
+                    frameborder="1" style="margin-left:15px; overflow-wrap:normal; float:right"
+                    src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyD9pmMuEb9ym41g6x_iyQV7f3hcZAOZlek&origin=place_id:@Html.ViewData.Model.ViewModel.origin[i]&destination=place_id:@Html.ViewData.Model.ViewModel.destin[i]&avoid=tolls|highways" allowfullscreen>
+            </iframe>
+
+
+        </div>
     </div>
-</div>
     <br>
     <br>
 

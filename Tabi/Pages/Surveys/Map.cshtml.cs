@@ -8,6 +8,10 @@ using Tabi.ViewModels;
 using Tabi.Models;
 using Microsoft.EntityFrameworkCore;
 using Tabi.Pages.Portfolio;
+using System.Collections;
+using java.util;
+using Hashtable = java.util.Hashtable;
+using Newtonsoft.Json;
 
 namespace Tabi.Pages.Surveys
 {
@@ -15,12 +19,18 @@ namespace Tabi.Pages.Surveys
     {
         private readonly Tabi.Data.TabiContext _context;
         private List<string> temp = new List<string>();
+        public List<String> list { get; set; } = new List<String>();
+        public List<String> code { get; set; } = new List<String>();
         public MainPageViewModel ViewModel { get; set; } = new MainPageViewModel();
+        public int passed { get; set; }
         public MapModel(Tabi.Data.TabiContext context)
         {
             _context = context;
         }
         public Survey Survey { get; set; }
+
+        
+        
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -77,6 +87,7 @@ namespace Tabi.Pages.Surveys
                 for (int i = 0; i < geocodeRootObject.results.Count; i++)
                 {
                     ViewModel.populars.Add(geocodeRootObject.results[i].formatted_address);
+                code.Add(geocodeRootObject.results[i].address_components[geocodeRootObject.results[i].address_components.Count() - 1].short_name);
                     ViewModel.ID.Add(geocodeRootObject.results[i].formatted_address + "!" + id + "!" + _context.Entry.Count());
                 }
 
@@ -86,6 +97,56 @@ namespace Tabi.Pages.Surveys
             
 
         }
+
+        public static Hashtable convert()
+        {
+            var hash = new Hashtable();
+            List<String> a = new List<String>();
+            foreach (Locale lo in Locale.getAvailableLocales())
+            {
+                Currency c = Currency.getInstance(lo);
+                String s = lo.getCountry();
+                String cu = c.getCurrencyCode();
+                hash.put(s,cu);
+
+            }
+
+            return hash;
+        }
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if(!ModelState.IsValid)
+            {
+                return Page();
+            }
+            CurrencyRetriever retrieve = new CurrencyRetriever();
+            CurrencyRootObject currency = await retrieve.GetCurrency();
+            List<CountryCurrencyRootObject> geocodes = JsonConvert.DeserializeObject<List<CountryCurrencyRootObject>>("@CurrencyCodes.json");
+
+
+            List<double> listc = new List<double>();
+            /*double[] copy = new double[code.Count()];
+            for(int i=0; i<code.Count(); i++)
+            {
+                var temp = code[i];
+                listc.Add((double)table.get(temp));
+                copy[i]=(double)table.get(temp);
+
+            }
+            
+            Array.Sort(copy);
+            
+            List<String> update = new List<String>();
+            for(int j=0; j<code.Count(); j++)
+            {
+                update.Add(list.ElementAt(listc.IndexOf(copy[j])));
+            }
+            ViewModel.populars = update;*/
+            return Page();
+
+        }
+
+
 
     }
 }

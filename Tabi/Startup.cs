@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Tabi.Data;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace Tabi
 {
@@ -47,6 +49,12 @@ namespace Tabi
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+           app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+            Path.Combine(Directory.GetCurrentDirectory(), "Imgs")),
+                RequestPath = "/Imgs"
+            });
 
             app.UseRouting();
 

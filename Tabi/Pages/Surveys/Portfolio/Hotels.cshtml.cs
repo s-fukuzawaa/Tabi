@@ -80,12 +80,28 @@ namespace Tabi.Pages.Portfolio
                 {
                     ViewModel.imgUrl.Add("0");
                 }
-                GeocodeRootObject geocodeRootObject = await geoRetriever.GetGeocode("nearest+hotel+from+" + placeRootObject.results[i].formatted_address);
-                ViewModel.origin.Add(geocodeRootObject.results[0].place_id);
-                ViewModel.destin.Add(placeRootObject.results[i].place_id);
-
-                ViewModel.price.Add(placeRootObject.results[i].price_level + "");
-                ViewModel.rating.Add(placeRootObject.results[i].rating + "");
+                if (placeRootObject.results[i].formatted_address.Contains("#"))
+                {
+                    string[] help = placeRootObject.results[i].formatted_address.Split("#");
+                    string temp = help[0];
+                    for (int h = 1; h < help.Length; h++)
+                    {
+                        temp = temp + help[h];
+                    }
+                    GeocodeRootObject geocodeRootObject = await geoRetriever.GetGeocode("nearest+hotel+from+" + temp);
+                    ViewModel.origin.Add(geocodeRootObject.results[0].place_id);
+                    ViewModel.destin.Add(placeRootObject.results[i].place_id);
+                    ViewModel.price.Add(placeRootObject.results[i].price_level + "");
+                    ViewModel.rating.Add(placeRootObject.results[i].rating + "");
+                }
+                else
+                {
+                    GeocodeRootObject geocodeRootObject = await geoRetriever.GetGeocode("nearest+hotel+from+" + placeRootObject.results[i].formatted_address);
+                    ViewModel.origin.Add(geocodeRootObject.results[0].place_id);
+                    ViewModel.destin.Add(placeRootObject.results[i].place_id);
+                    ViewModel.price.Add(placeRootObject.results[i].price_level + "");
+                    ViewModel.rating.Add(placeRootObject.results[i].rating + "");
+                }
             }
             /* <img src="@Html.ViewData.Model.ViewModel.imgUrl[i]">*/
 
