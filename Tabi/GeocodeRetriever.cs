@@ -19,7 +19,9 @@ namespace Tabi
             string apiUrl = $"https://maps.googleapis.com/maps/api/geocode/json?address={s}&key=AIzaSyD9pmMuEb9ym41g6x_iyQV7f3hcZAOZlek";
             string responseString = await httpClient.GetStringAsync(apiUrl);
             GeocodeRootObject geocodes = JsonConvert.DeserializeObject<GeocodeRootObject>(responseString);
+            
             return geocodes;
+
         }
     }
 }
